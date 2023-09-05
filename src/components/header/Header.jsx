@@ -7,6 +7,7 @@ import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css';
 import { DateRange } from "react-date-range"
 import { format } from "date-fns";
+import { createSearchParams, useNavigate, useSearchParams } from "react-router-dom";
 
 
 
@@ -27,8 +28,11 @@ export default function Header() {
             key: "selection",
         }
     ]);
+    //set open calendar
     const [openDate, setOpenDate] = useState(false)
-
+    //nav for search 
+    // const navigator = useNavigate();
+    const [searchParams, setSearchParams] = useSearchParams()
 
     // function handler for +||-
     const handlerOption = (name, operation) => {
@@ -45,6 +49,22 @@ export default function Header() {
 
         // localStorage.setItem("number", JSON.stringify(options))
     }
+
+    const handlerSearch = () => {
+        const encodedParams = createSearchParams({
+            date: JSON.stringify(date)
+            , options: JSON.stringify(options),
+            destination
+        })
+        setSearchParams(encodedParams)
+        //note=>  set search params (encodedparams)
+        navigator({
+            pathname: "hotels",
+            search: encodedParams.toString(),
+        });
+    }
+
+
     //set costumhook for open and close calendar===>when anywhere clicked  
     const optionsDateRef = useRef();
     useOutsideClick(optionsDateRef, "optionDropDwon", () => setOpenDate(false));
@@ -86,7 +106,7 @@ export default function Header() {
                     <span className="seperator"></span>
                 </div>
                 <div className="headerSearchItem">
-                    <button className="headerSearchBtn">
+                    <button className="headerSearchBtn" onClick={handlerSearch}>
                         <HiSearch className="headerIcon" />
                     </button>
                 </div>

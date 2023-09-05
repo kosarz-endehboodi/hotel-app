@@ -4,7 +4,10 @@ export default function LocationList() {
     const { data, loading } = useFetch("http://localhost:5000/hotels", "")
 
     if (loading) {
-        <Loader />
+        return (
+            <div className="locationList">
+                <Loader />
+            </div>)
     }
     return < div className="nearbyLocation" >
         <h2>nearby Locations</h2>
