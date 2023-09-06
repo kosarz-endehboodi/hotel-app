@@ -1,9 +1,10 @@
 @import url("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css");
 
-.container{
-margin: 0% auto;
-max-width: fit-content;
+.container {
+  margin: 0% auto;
+  max-width: fit-content;
 }
+
 .header {
   display: flex;
   justify-content: center;
@@ -11,6 +12,7 @@ max-width: fit-content;
   gap: 1rem;
 
 }
+
 .headerSearch {
   display: flex;
   width: 100%;
@@ -27,11 +29,13 @@ max-width: fit-content;
   padding: 0.7rem 0.5rem;
   font-size: 1rem;
 }
+
 .headerSearchItem {
   display: flex;
   align-items: center;
   position: relative;
 }
+
 .headerSearchItem .seperator {
   display: inline-block;
   width: 1px;
@@ -39,15 +43,18 @@ max-width: fit-content;
   background-color: var(--text-400);
   margin: 0 1rem;
 }
+
 .textField {
   padding: 0.7rem 1rem;
   border-radius: 0.5rem;
 }
+
 .headerIcon {
   width: 1.5rem;
   height: 1.5rem;
   display: inline-block;
 }
+
 .locationIcon {
   color: var(--rose-500);
 }
@@ -63,25 +70,30 @@ max-width: fit-content;
   width: 220px;
   z-index: 1000;
 }
+
 .guestOptionItem {
   display: flex;
   align-items: center;
   gap: 1rem;
   justify-content: space-between;
 }
+
 .guestOptionItem:not(:last-child) {
   margin-bottom: 1rem;
 }
+
 .guestOptionItem span,
 .guestOptionItem button {
   display: inline-block;
 }
+
 .guestOptionItem .optionCounterBtn {
   padding: 0.5rem;
   border-radius: 0.5rem;
   color: var(--text-600);
   background-color: var(--text-100);
 }
+
 .optionText {
   display: inline-block;
   flex: 1;
@@ -121,12 +133,24 @@ max-width: fit-content;
 }
 
 /*  location list */
+@import url("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css");
 .nearbyLocation {
   max-width: 1280px;
   margin: 2rem auto;
 }
+
 .nearbyLocation h2 {
   margin-bottom: 1rem;
+}
+
+.location {
+  font-weight: bold;
+  padding: 6px 0;
+}
+
+.price {
+font-weight:300 ;
+padding: 6px 0;
 }
 .locationList {
   display: grid;
@@ -143,16 +167,18 @@ max-width: fit-content;
   margin-bottom: 0.5rem;
 }
 
-.locationItemDesc > :not(:last-child) {
+.locationItemDesc> :not(:last-child) {
   margin-bottom: 0.2rem;
 }
 
 .locationItem .locationItemDesc .name {
   color: var(--text-400);
 }
+
 .locationItem .locationItemDesc .location {
   font-weight: 500;
 }
+
 .locationItem .locationItemDesc .price {
   font-weight: 500;
   display: flex;
@@ -178,9 +204,11 @@ max-width: fit-content;
   margin-bottom: 0.3rem;
   font-size: 1rem;
 }
-.roomDetail > div {
+
+.roomDetail>div {
   margin-bottom: 1rem;
 }
+
 .roomDetail img {
   width: 100%;
   height: auto;
@@ -195,6 +223,7 @@ max-width: fit-content;
   background-color: var(--text-100);
   position: relative;
 }
+
 .mapContainer button.getLocation {
   padding: 0.3rem 0.5rem;
   font-size: 0.7rem;
@@ -208,6 +237,7 @@ max-width: fit-content;
   color: #fff;
   z-index: 1000;
 }
+
 .map {
   height: 100%;
 }
@@ -222,21 +252,26 @@ max-width: fit-content;
   display: flex;
   gap: 1rem;
 }
+
 .searchList .searchItem img {
   width: 6rem;
   height: 6rem;
   object-fit: cover;
   border-radius: 1rem;
 }
+
 .searchItem .searchItemDesc p {
   margin-bottom: 0.3rem;
 }
+
 .searchItem .searchItemDesc .name {
   color: var(--text-400);
 }
+
 .searchItem .searchItemDesc .location {
   font-weight: 500;
 }
+
 .searchItem .searchItemDesc .price {
   font-weight: 500;
   display: flex;
@@ -279,6 +314,7 @@ max-width: fit-content;
 .bookmarkList {
   margin-top: 1rem;
 }
+
 .bookmarkItem {
   margin-bottom: 1rem;
   border: 1px solid var(--text-400);
@@ -333,6 +369,7 @@ max-width: fit-content;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
 }
+
 .btn--primary {
   background-color: var(--primary-600);
   color: #fff;

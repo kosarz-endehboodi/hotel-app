@@ -15,7 +15,8 @@ import { createSearchParams, useNavigate, useSearchParams } from "react-router-d
 
 export default function Header() {
     //use for search
-    const [destination, setdestination] = useState();
+    const [searchParams, setSearchParams] = useSearchParams();
+    const [destination, setdestination] = useState( searchParams.get("destination") || "");
     //use for dropdown
     const [openOption, setopenoptions] = useState(false);
     //set use for select  counter & change numbers
@@ -31,8 +32,8 @@ export default function Header() {
     //set open calendar
     const [openDate, setOpenDate] = useState(false)
     //nav for search 
-    // const navigator = useNavigate();
-    const [searchParams, setSearchParams] = useSearchParams()
+    const navigate = useNavigate();
+    
 
     // function handler for +||-
     const handlerOption = (name, operation) => {
@@ -56,13 +57,13 @@ export default function Header() {
             , options: JSON.stringify(options),
             destination
         })
-        setSearchParams(encodedParams)
+        // setSearchParams(encodedParams)
         //note=>  set search params (encodedparams)
-        navigator({
-            pathname: "hotels",
+        navigate({
+            pathname: "/hotels",
             search: encodedParams.toString(),
-        });
-    }
+          });
+        };
 
 
     //set costumhook for open and close calendar===>when anywhere clicked  
