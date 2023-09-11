@@ -300,7 +300,7 @@ padding: 6px 0;
 }
 
 .searchItem.current-hotel {
-  border: 3px solid var(--primary-700);
+  border: 3px solid #2e186b;
   border-radius: 1rem;
 }
 
@@ -410,4 +410,8 @@ a.active {
   color: var(--rose-500);
   width: 1.1rem;
   height: 1.1rem;
+}
+
+.imgSingle{
+  width: 300px;
 }
