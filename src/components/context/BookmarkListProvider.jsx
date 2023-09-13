@@ -4,7 +4,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 const bookMarkContext = createContext();
 export default function BookMarkContext({ children }) {
-    const [currentBookMark, setcurrentBookMark] = useState({});
+    const [currentBookmark, setcurrentBookMark] = useState({});
     const [loadingBookmarkCurr, setLoadingBookmarkCurr] = useState(false);
     const base_url = "http://localhost:5000";
 
@@ -19,16 +19,16 @@ export default function BookMarkContext({ children }) {
         } catch (error) {
             toast.error(error.message)
             setLoadingBookmarkCurr(false)
-        }
+        } 
     }
-
+  
     return (
         <bookMarkContext.Provider
             value={{
                 loading,
                 bookmarks,
                 GetBookmark,
-                currentBookMark,
+                currentBookmark,
                 loadingBookmarkCurr
             }}>
             {children}
