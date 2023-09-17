@@ -1,5 +1,5 @@
 
-import { MdLocationOn } from "react-icons/md"
+import { MdLocationOn, MdLogout } from "react-icons/md"
 import { HiCalendar, HiMinus, HiPlus, HiSearch } from "react-icons/hi"
 import { useRef, useState } from "react";
 import useOutsideClick from "../../hooks/useOutsideClick"
@@ -8,6 +8,7 @@ import 'react-date-range/dist/theme/default.css';
 import { DateRange } from "react-date-range"
 import { format } from "date-fns";
 import { NavLink, createSearchParams, useNavigate, useSearchParams } from "react-router-dom";
+import { useAuth } from "../context/AuthProvider";
 
 
 
@@ -16,7 +17,7 @@ import { NavLink, createSearchParams, useNavigate, useSearchParams } from "react
 export default function Header() {
     //use for search
     const [searchParams, setSearchParams] = useSearchParams();
-    const [destination, setdestination] = useState( searchParams.get("destination") || "");
+    const [destination, setdestination] = useState(searchParams.get("destination") || "");
     //use for dropdown
     const [openOption, setopenoptions] = useState(false);
     //set use for select  counter & change numbers
@@ -33,7 +34,7 @@ export default function Header() {
     const [openDate, setOpenDate] = useState(false)
     //nav for search 
     const navigate = useNavigate();
-    
+
 
     // function handler for +||-
     const handlerOption = (name, operation) => {
@@ -62,8 +63,8 @@ export default function Header() {
         navigate({
             pathname: "/hotels",
             search: encodedParams.toString(),
-          });
-        };
+        });
+    };
 
 
     //set costumhook for open and close calendar===>when anywhere clicked  
@@ -71,7 +72,11 @@ export default function Header() {
     useOutsideClick(optionsDateRef, "optionDropDwon", () => setOpenDate(false));
     return (
         <div className="Header">
-             <NavLink style={{padding:"10px"}} to="/bookmark">Bookmarks</NavLink>
+            <div className="nav-page">
+                <NavLink className="optionsNav"  to="/bookmark">Bookmarks</NavLink>
+              <div>|</div>
+                <User  className="optionsNav" />
+            </div>
             <div className="headerSearch">
                 <div className="headerSearchItem">
                     <MdLocationOn className="headerIcon locationIcon" />
@@ -113,6 +118,7 @@ export default function Header() {
                     </button>
                 </div>
             </div>
+
         </div>
     );
 
@@ -146,4 +152,30 @@ function OptionItem({ type, options, minlimit, handlerOption }) {
             </div>
         </div>
     )
+}
+
+
+
+function User() {
+    const navigate = useNavigate();
+    const { user, isAthenticated, logout } = useAuth();
+    const handleLogout = () => {
+        logout();
+        navigate("/");
+    };
+
+    return (
+        <div>
+            {isAthenticated ? (
+                <div>
+                    <strong>{user.name}</strong>
+                    <button>
+                        &nbsp; <MdLogout onClick={handleLogout}  className="logout icon" />
+                    </button>
+                </div>
+            ) : (
+                <NavLink to="/login">login</NavLink>
+            )}
+        </div>
+    );
 }

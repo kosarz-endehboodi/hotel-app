@@ -11,7 +11,7 @@ export default function Hotels() {
         return <div className="searchList"><LoaderForItem /></div>
     }
     return (
-        <div className="searchList">
+        <div className={`searchList `}>
             <h2>Search Results{Hotels.length}</h2>
             {
                 Hotels.map((item) => {

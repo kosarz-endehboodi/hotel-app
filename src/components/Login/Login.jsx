@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-// import { useAuth } from "../context/AuthProvider";
+import { useAuth } from "../context/AuthProvider";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("user@gmail.com");
   const [password, setPassword] = useState("1234");
-  const { login, isAuthenticated } = useAuth();
+  const { login, isAthenticated } = useAuth();
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,8 +13,8 @@ function Login() {
   };
 
   useEffect(() => {
-    if (isAuthenticated) navigate("/", { replace: true });
-  }, [isAuthenticated, navigate]);
+    if (isAthenticated) navigate("/", { replace: true });
+  }, [isAthenticated, navigate]);
 
   return (
     <div className="loginContainer">

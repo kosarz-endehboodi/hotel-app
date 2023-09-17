@@ -9,7 +9,7 @@ export default function () {
     return (
         <div className="appLayout">
             <div className="sidebar"> <Outlet /></div>
-            <Map markerLocation={Hotels} />
+            <Map className="map" markerLocation={Hotels} />
         </div>
     )
 }

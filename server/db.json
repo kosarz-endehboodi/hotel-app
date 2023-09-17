@@ -1325,15 +1325,6 @@
   ],
   "bookmarks": [
     {
-      "cityName": "Abalessa",
-      "country": "Algeria",
-      "countryCode": "DZ",
-      "latitude": "23.18455079512732",
-      "longitude": "3.795523257510883",
-      "host_location": "Abalessa Algeria",
-      "id": 1
-    },
-    {
       "cityName": "Baba Kot",
       "country": "Pakistan",
       "countryCode": "PK",
@@ -1368,6 +1359,24 @@
       "longitude": "-3.6966603006324843",
       "host_location": "Madrid Spain",
       "id": 24
+    },
+    {
+      "cityName": "Heinsberg",
+      "country": "Germany",
+      "countryCode": "DE",
+      "latitude": "51.04940187843798",
+      "longitude": "6.075154364299814",
+      "host_location": "Heinsberg Germany",
+      "id": 25
+    },
+    {
+      "cityName": "Gangelt",
+      "country": "Germany",
+      "countryCode": "DE",
+      "latitude": "50.998589259769616",
+      "longitude": "5.994586944580079",
+      "host_location": "Gangelt Germany",
+      "id": 26
     }
   ]
 }

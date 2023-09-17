@@ -14,7 +14,7 @@ import Bookmark from "./components/bookMarks/Bookmark";
 import SingleBookmark from "./components/singelBookmark/SingleBookmark";
 import AddBookmark from "./components/AddBookmarks/AddBookmarks";
 import Login from "./components/Login/Login";
-import AuthContextProvider from "./components/context/Authprovider";
+import AuthContextProvider from "./components/context/AuthProvider";
 function App() {
   return (
     <AuthContextProvider>
