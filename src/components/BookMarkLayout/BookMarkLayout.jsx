@@ -8,7 +8,7 @@ export default function bookMarkLayout() {
             <div className="sidebar">
                 <Outlet />
             </div>
-            <Map markerLocation={[]} />
+            <Map markerLocation={bookmarks} />
         </div>
     )
 }

@@ -7,7 +7,7 @@ import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css';
 import { DateRange } from "react-date-range"
 import { format } from "date-fns";
-import { createSearchParams, useNavigate, useSearchParams } from "react-router-dom";
+import { NavLink, createSearchParams, useNavigate, useSearchParams } from "react-router-dom";
 
 
 
@@ -71,6 +71,7 @@ export default function Header() {
     useOutsideClick(optionsDateRef, "optionDropDwon", () => setOpenDate(false));
     return (
         <div className="Header">
+             <NavLink style={{padding:"10px"}} to="/bookmark">Bookmarks</NavLink>
             <div className="headerSearch">
                 <div className="headerSearchItem">
                     <MdLocationOn className="headerIcon locationIcon" />
